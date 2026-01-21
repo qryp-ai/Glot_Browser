@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="options">
+  <section class="settings">
+    <header>
+      <h1>AI Chat Settings</h1>
+      <button id="backToPopup" class="icon-btn" title="Open Chat" aria-label="Open Chat">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+      </button>
+    </header>
+
+    <div class="form-row">
+      <label for="apiKey" class="small muted">API Key</label>
+      <div class="input">
+        <input type="password" id="apiKey" placeholder="Enter your API Key" autocomplete="off" />
+        <button id="toggleKey" class="icon-btn" title="Show/Hide">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 5c-7.633 0-11 7-11 7s3.367 7 11 7 11-7 11-7-3.367-7-11-7zm0 12a5 5 0 1 1 .001-10.001A5 5 0 0 1 12 17z"/></svg>
+        </button>
+      </div>
+      <div id="saveNote" class="note">Your key is stored locally in chrome.storage.local.</div>
+    </div>
+
+    <div class="form-row">
+      <label for="provider" class="small muted">Provider</label>
+      <div class="input">
+        <select id="provider">
+          <option value="auto">Auto (based on key)</option>
+          <option value="openai">OpenAI</option>
+          <option value="google">Google</option>
+          <option value="ollama">Ollama (local)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="model" class="small muted">Model</label>
+      <div class="input">
+        <input type="text" id="model" placeholder="Leave blank for default (e.g. gpt-5-mini, gemini-2.5-flash)" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label for="allowedDomains" class="small muted">Allowed Domains (optional)</label>
+      <div class="input">
+        <textarea id="allowedDomains" rows="3" placeholder="One pattern per line (e.g. *.google.com, https://example.com)"></textarea>
+      </div>
+      <div class="note">If set, the agent will restrict actions to these domains.</div>
+    </div>
+
+    <div class="actions">
+      <button id="save" class="btn primary">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17 3H5a2 2 0 0 0-2 2v14l4-4h10a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2z"/></svg>
+        <span>Save Settings</span>
+      </button>
+      <button id="clear" class="btn ghost">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zm3.46-9h1.5v7h-1.5V10zm5 0h1.5v7h-1.5V10zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+        <span>Clear Key</span>
+      </button>
+    </div>
+
+    <p id="status" class="note" role="status"></p>
+  </section>
+  <script src="options.js" defer></script>
+</body>
+</html>

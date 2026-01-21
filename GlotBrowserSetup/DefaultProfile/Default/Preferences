@@ -1,0 +1,19 @@
+{
+  "browser": {
+    "toolbar": {
+      "pinned_extensions": {
+        "oclglcomaknfdobagkjpfhannlkggkim": true
+      }
+    }
+  },
+  "extensions": {
+    "settings": {
+      "oclglcomaknfdobagkjpfhannlkggkim": {
+        "state": 1,
+        "manifest": {
+          "name": "Glot AI Chat"
+        }
+      }
+    }
+  }
+}

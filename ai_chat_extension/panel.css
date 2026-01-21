@@ -1,0 +1,632 @@
+
+/* ===== Scrollbar CSS ===== */
+::-webkit-scrollbar {
+  width: 10px;               /* width of vertical scrollbar */
+  height: 10px;              /* height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #63f614;       /* track color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f2ff00;          /* thumb color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:  #242526;          /* thumb hover color */
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;     /* auto, thin, or none */
+  scrollbar-color: #3a3b3c #242526; /* thumb color | track color */
+}
+
+
+
+/* --- Console-style assistant thinking stream --- */
+.msg.assistant .bubble p {
+  white-space: pre-line; /* show raw newlines nicely */
+  /* font-family: "Consolas", "Courier New", monospace; */
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  font-size: 14px;
+  line-height: 1.4;
+  margin: 0;
+  color: #e3e3e3;
+  animation: fadeReplace 0.3s ease-in-out;
+}
+
+@keyframes fadeReplace {
+  from { opacity: 0; transform: translateY(2px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.msg.user .bubble {
+  background: #2e2e2e;
+  color: #fefefe;
+}
+
+.msg.assistant .bubble {
+  /* background: #1e1e1e; */
+  /* border: 1px solid #333; */
+  background: transparent;
+}
+
+
+/* Dark theme based on the reference design */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    /* background-color: #18191a;  */
+    /* background-color: rgba(5, 43, 156, 0.588); */
+    color: #e4e6eb; /* Light text */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: #242526; /* Slightly lighter dark bg */
+    border: 1px solid #3a3b3c;
+    border-radius: 8px;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+/* Header removed - full screen chat */
+
+.doc-uploader {
+    border-bottom: 1px solid #3a3b3c;
+    background: #202124;
+    padding: 8px 8px 6px;
+}
+
+.dropzone {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border: 1px dashed #4a4a4a;
+    border-radius: 10px;
+    padding: 8px 10px;
+    color: #c2c3c5;
+    background: #1a1b1d;
+}
+
+.dropzone.dragover {
+    border-color: #0080ff;
+    background: #1d2330;
+}
+
+.dropzone .btn {
+    border: 1px solid #3a3b3c;
+    background: #242526;
+    color: #e4e6eb;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.doc-list {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 98px;
+    overflow-y: auto;
+}
+
+.doc-item {
+    border: 1px solid #34363a;
+    background: #242526;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.doc-item .title {
+    font-weight: 600;
+    color: #e4e6eb;
+    margin-bottom: 2px;
+}
+
+.doc-item .preview {
+    color: #aab0b6;
+    font-size: 12px;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+/* Header styles removed */
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.status-dot.offline {
+    background: #f28b82;
+}
+
+.status-dot.online {
+    background: #81c995;
+}
+
+.icon-btn {
+    background: transparent;
+    border: 1px solid #3a3b3c;
+    color: #e4e6eb;
+    border-radius: 8px;
+    padding: 6px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.icon-btn:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.icon-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.chat-window {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    background-color: 1a1a1a;
+}
+
+.msg {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 18px;
+    max-width: fit-content;
+    word-wrap: break-word;
+    display: flex;
+}
+
+.msg pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.msg.assistant {
+    
+    color: #e4e6eb;
+    align-self: flex-start;
+    font-size: 1.1em;
+    /* padding: 190px 10px; */
+    border-bottom: 1px solid #3a3b3c;
+    margin-bottom: 15px;
+}
+
+.msg.user .bubble {
+    background-color: transparent;
+}
+
+.msg.user {
+    background-color: #2c3846;
+    color: #fff;
+    font-size: 1.1em;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
+    padding: 12px 16px;
+    border-radius: 18px;
+    margin-bottom: 15px;
+    max-width: 325px;
+    width: fit-content;
+}
+
+.bubble {
+    background: transparent;
+    border: none;
+    padding: 0;
+    max-width: 100%;
+    width: fit-content;
+}
+
+.bubble p {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-all;
+    text-align: left;
+}
+
+.tools {
+    display: flex;
+    gap: 6px;
+    margin-top: 6px;
+    justify-content: flex-end;
+}
+
+.tool-btn {
+    background: transparent;
+    border: 1px solid #3a3b3c;
+    color: #9aa0a6;
+    border-radius: 6px;
+    padding: 4px 6px;
+    cursor: pointer;
+}
+
+.tool-btn:hover {
+    border-color: #007bff;
+    color: #007bff;
+}
+
+.chat-input-area {
+    display: flex;            /* anchor child to bottom so textarea grows upward */
+    align-items: flex-end;
+    padding: 6px;
+    
+    background: 1a1a1a;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;             /* span full width */
+    /* The wrapper becomes the visual input box */
+    background: #393939;
+    border: 1px solid #3a3b3c;
+    border-radius: 15px;
+    overflow: hidden; /* clip overlay to rounded corners */
+    /* Reserve space at the bottom for controls so content never overlaps */
+    padding-bottom: 25px;
+}
+
+/* Old add-doc-btn styles removed - now using input-control-btn */
+
+#prompt {
+    width: 100%;
+    padding: 10px 16px 0 16px; /* bottom padding removed; wrapper reserves space */
+    border: 0;          /* wrapper owns the border */
+    border-radius: 0;   /* wrapper owns the radius */
+    resize: none;
+    background: transparent; /* wrapper owns the background */
+    color: #e4e6eb;
+    min-height: 40px;   /* slightly taller by default */
+    height: 40px;       /* explicit initial height (pre-JS) */
+    max-height: 96px;   /* grow upward but stay compact */
+    font-size: 14px;
+    line-height: 1.4;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.send-btn {
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.send-btn svg {
+    width: 14px;
+    height: 14px;
+    color: #333;
+}
+
+.send-btn:disabled {
+    background: #666;
+    cursor: not-allowed;
+}
+
+.send-btn:disabled svg {
+    color: #999;
+}
+
+.send-btn:hover:not(:disabled) {
+    background: #f0f0f0;
+}
+
+.input-overlay-controls {
+    position: absolute;
+    bottom: 0; /* flush to bottom */
+    left: 12px;   /* align to tighter inner padding */
+    right: 12px;  /* align to tighter inner padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    z-index: 1; /* ensure controls are above text */
+}
+
+.input-controls-left {
+    display: flex;
+    align-items: center;
+    gap: 2px; /* ultra-tight spacing */
+    pointer-events: auto;
+}
+
+.input-controls-right {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* comfortable spacing */
+    pointer-events: auto;
+}
+
+.input-control-btn {
+    background: transparent; /* transparent controls */
+    border: none; /* minimal, no border */
+    color: #919191;
+    border-radius: 6px;
+    padding: 0 4px; /* tighter horizontal padding */
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-control-btn:hover {
+    opacity: 0.85; /* subtle hover */
+    text-decoration: underline; /* underline text buttons */
+}
+
+.input-control-btn svg {
+    width: 16px; /* compact icons */
+    height: 16px;
+}
+
+/* Smaller icons for Settings and Attach inside input overlay */
+#openSettings svg,
+#addDoc svg {
+    width: 12px;
+    height: 12px;
+}
+
+/* Inline status near Clear button */
+.status {
+    color: #9aa0a6; /* grey */
+    font-size: 12px;
+    margin-left: 4px; /* tighter space from New chat */
+}
+
+/* Drawer - Settings panel */
+.drawer {
+    position: fixed;
+    inset: 0 0 0 auto;
+    width: 360px;
+    background: #18191a;
+    border-left: 1px solid #3a3b3c;
+    transform: translateX(100%);
+    transition: transform .18s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.drawer.open {
+    transform: translateX(0);
+}
+
+.drawer.hidden {
+    display: block;
+}
+
+.drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #3a3b3c;
+    background: #242526;
+}
+
+.drawer-header h2 {
+    margin: 0;
+    color: #e4e6eb;
+    font-size: 1.1em;
+}
+
+.drawer-content {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-row {
+    display: grid;
+    gap: 6px;
+}
+
+.input input,
+.input textarea,
+.input select {
+    border: 1px solid #3a3b3c;
+    background: #3a3b3c;
+    color: #e4e6eb;
+    border-radius: 8px;
+    padding: 7px 9px;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.muted {
+    color: #9aa0a6;
+}
+
+.toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #e4e6eb;
+}
+
+.toggles {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+
+.btn {
+    border: 1px solid #3a3b3c;
+    background: #242526;
+    color: #e4e6eb;
+    border-radius: 8px;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.btn.primary {
+    background: #1e272dda;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.btn.ghost {
+    background: transparent;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.note {
+    color: #9aa0a6;
+    font-size: 11px;
+    line-height: 1.3;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .drawer { 
+        width: 100%; 
+    }
+}
+
+.history-wrap {
+    padding: 8px 12px;
+}
+
+.history-controls {
+    display: flex;
+    justify-content: flex-end;
+    margin: 4px 0 8px;
+}
+
+.history-clear-all {
+    background: transparent;
+    border: 1px solid #3a3b3c;
+    color: #9aa0a6;
+    border-radius: 6px;
+    padding: 4px 8px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.history-clear-all:hover {
+    border-color: #ff6b6b;
+    color: #ff6b6b;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.history-item {
+    border: 1px solid #34363a;
+    background: #242526;
+    border-radius: 6px;
+    padding: 0px 8px;
+    min-height: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.history-item:hover {
+    border-color: #4a4d52;
+    background: #2a2c2f;
+}
+
+.history-title {
+    flex: 1 1 auto;
+    min-width: 0;
+    font-weight: 600;
+    color: #888888;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 6px;
+}
+
+.history-del {
+    background: transparent;
+    border: none;
+    color: #888888;
+    width: 27px;
+    height: 22px;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    cursor: pointer;
+}
+
+.history-del:hover {
+    background: #333538;
+    color: #ff6b6b;
+}
+
+.history-del svg {
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 480px) {
+    .history-wrap { padding: 6px; }
+    .history-clear-all { padding: 3px 6px; font-size: 11px; }
+}
+
+
+

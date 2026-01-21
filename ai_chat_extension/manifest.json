@@ -1,0 +1,43 @@
+{
+  "manifest_version": 3,
+  "name": "GlotBrowser AI",
+  "version": "1.0.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqWKCw/bUl6EnT0nxEqL0yr1Ugcr5Q0T4i74W2nleE3Sla7OK2UAyOfq4txFq+w6FUnCOAUhgHtEamrEP9AkQPOp4v1C2dC6QlXlu5fGMmG9cnxtxXhIYzZdA0YunME3F9j4lxMlYdTuMGlGXRSWhNv51+ntEXvRMli6pDbL1Tro6UX7Xdvb0KG5FKTzOuLtRLXecivCVPf7N/r0rwcsV8aNyX8rCsMiyXX/WdD78bYexv6jjAv3jduMNOtLH92zjDJk2jRD7ygzUiTAdudZka25KcmjC6FZTLJbWhNEzg+sVFMeOG6+u/d5lEc/TaSDRdUYOdzCJ/mFyFT9l3wWfvQIDAQAB",
+  "description": "Built-in AI Chat interface for automation.",
+  "icons": {
+    "16": "icons/Logo glot.png",
+    "48": "icons/Logo glot.png",
+    "128": "icons/Logo glot.png",
+    "256": "icons/Logo glot.png"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "sidePanel", "tabs"],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*",
+    "http://localhost:8000/*"
+  ],
+  "optional_host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_icon": {
+      "16": "icons/Logo glot.png",
+      "48": "icons/Logo glot.png",
+      "128": "icons/Logo glot.png"
+    },
+    "default_title": "GlotBrowser AI"
+  },
+  "side_panel": { "default_path": "panel.html" },
+  "options_page": "options.html",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["panel.html", "panel.css", "panel.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; connect-src 'self' http://127.0.0.1:8000 http://localhost:8000"
+  }
+}

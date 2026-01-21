@@ -1,0 +1,129 @@
+/* Separate styles for the welcome banner in panel.html */
+
+/* Full-width banner that visually spans the chat window */
+.welcome-banner {
+  /* Stretch across the chat window by offsetting its horizontal padding (5px) */
+  margin: 0 -5px 0px;
+  padding: 159px 0px;
+  background: #37353E;
+  border-bottom: 1px solid #f798ff;
+  /* background-color: red; */
+  /*min-height: 100%;*/
+  height: 263px;
+  position: relative;
+  
+}
+
+/* Center content and constrain readable width where needed */
+.welcome-inner {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.welcome-inner.welcome-centered {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome-inner.welcome-inline {
+  position: static;
+  transform: none;
+  margin: 12px auto 10px;
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+}
+
+.welcome-inner .logo {
+  width: 148px;
+  height: 117px;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.welcome-inner .welcome-line {
+  font-size: 18px;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.welcome-inner .brand-line {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 5px 0 20px 0;
+  line-height: 1.2;
+}
+
+.welcome-inner .subtitle {
+  font-size: 12px;
+  line-height: 1.4;
+  color: #D3DAD9;
+  margin: 0;
+  max-width: 300px;
+}
+
+.welcome-inner .history-label {
+  font-size: 12px;
+  color: #909695;
+  margin-top: 0;
+  line-height: 1;
+}
+
+.welcome-inner .down-indicator {
+  margin-top: 0;
+  line-height: 0;
+  color: #9aa0a6;
+  margin-bottom: -7px;
+}
+
+.welcome-inner .down-indicator svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.history-cta {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.history-cta.hidden {
+  display: none;
+}
+
+.welcome-inner h1 {
+  margin: 0 0 8px;
+  font-size: 2rem; /* Bigger font as requested */
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.welcome-inner p {
+  margin: 0;
+  color: #cfd8dc;
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-wrap; /* preserve line breaks from the text */
+}
+

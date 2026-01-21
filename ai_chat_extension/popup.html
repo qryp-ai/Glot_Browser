@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Glot.ai</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="popup">
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <div class="logo">AI</div>
+        <div class="title">
+          <h1>Glot.ai</h1>
+          <p class="subtitle">Custom Chat Agent</p>
+        </div>
+      </div>
+      <button id="openOptions" class="icon-btn" title="Settings" aria-label="Open Settings">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.14 12.94c.04-.31.06-.63.06-.94s-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96a7.028 7.028 0 0 0-1.63-.94l-.36-2.54A.5.5 0 0 0 13.89 1h-3.78a.5.5 0 0 0-.49.41l-.36 2.54c-.58.22-1.12.52-1.63.94l-2.39-.96a.5.5 0 0 0-.6.22L2.72 7.05a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94s.02.63.06.94l-2.03 1.58a.5.5 0 0 0-.12.64l1.92 3.32c.14.24.43.34.69.25l2.39-.96c.51.41 1.06.73 1.63.94l.36 2.54c.05.24.25.41.49.41h3.78c.24 0 .44-.17.49-.41l.36-2.54c.58-.22 1.12-.52 1.63-.94l2.39.96c.26.1.55 0 .69-.25l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58zM12 15.6a3.6 3.6 0 1 1 0-7.2 3.6 3.6 0 0 1 0 7.2z"/></svg>
+      </button>
+    </header>
+
+    <div id="keyWarning" class="banner hidden">
+      <span>API key missing. Please add your key in Settings.</span>
+      <button id="goToSettings" class="btn small">Open Settings</button>
+    </div>
+
+    <main id="messages" class="messages" aria-live="polite">
+      <div class="msg assistant">
+        <div class="bubble">
+          <p>Hi! I’m your AI assistant. Ask me anything.</p>
+        </div>
+      </div>
+    </main>
+
+    <footer class="composer">
+      <div class="input-wrap">
+        <textarea id="prompt" rows="1" placeholder="Ask me something... (Shift+Enter for new line)"></textarea>
+      </div>
+      <div class="controls">
+        <button id="clearChat" class="btn ghost" title="Clear conversation">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6v12zm3.46-9h1.5v7h-1.5V10zm5 0h1.5v7h-1.5V10zM15.5 4l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+          <span>Clear</span>
+        </button>
+        <button id="send" class="btn primary" title="Send message">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+          <span>Send</span>
+        </button>
+      </div>
+      <div class="status-row">
+        <span id="status" class="small muted">Ready</span>
+      </div>
+    </footer>
+  </div>
+  <script src="popup.js" defer></script>
+</body>
+</html>
